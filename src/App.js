@@ -12,7 +12,12 @@ const App = () => {
       <div className='row'>
         <TemplateSelector setSelectedTemplate={setSelectedTemplate} setInputs={setInputs} />
         <CurrentTemplate selectedTemplate={selectedTemplate} />
-        <EditCaption inputs={inputs} setInputs={setInputs} />
+        <EditCaption
+          inputs={inputs}
+          setInputs={setInputs}
+          selectedTemplate={selectedTemplate}
+          setSelectedTemplate={setSelectedTemplate}
+        />
       </div>
     </div>
   );

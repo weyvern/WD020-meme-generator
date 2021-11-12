@@ -17,7 +17,7 @@ const TemplateSelector = ({ setSelectedTemplate, setInputs }) => {
           data: {
             data: { memes }
           }
-        } = await axios.get('https://api.imgflip.com/get_memes');
+        } = await axios.get(`${process.env.REACT_APP_IMG_FLIP_URL}/get_memes`);
         setTemplates(memes);
       } catch (error) {
         console.error(error);
