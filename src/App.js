@@ -1,25 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from 'react';
+import CurrentTemplate from './components/CurrentTemplate';
+import EditCaption from './components/EditCaption';
+import TemplateSelector from './components/TemplateSelector';
 
-function App() {
+const App = () => {
+  const [selectedTemplate, setSelectedTemplate] = useState();
+  const [inputs, setInputs] = useState([]);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='container mt-5'>
+      <div className='row'>
+        <TemplateSelector setSelectedTemplate={setSelectedTemplate} setInputs={setInputs} />
+        <CurrentTemplate selectedTemplate={selectedTemplate} />
+        <EditCaption inputs={inputs} />
+      </div>
     </div>
   );
-}
+};
 
 export default App;
