@@ -1,4 +1,8 @@
-const CurrentTemplate = ({ selectedTemplate }) => {
+import { useContext } from 'react';
+import { MemeContext } from '../context/MemeContext';
+
+const CurrentTemplate = () => {
+  const { selectedTemplate } = useContext(MemeContext);
   return (
     <div className='col-md-6'>
       {selectedTemplate ? (
