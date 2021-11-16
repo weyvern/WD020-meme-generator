@@ -1,7 +1,7 @@
 import { useContext } from 'react';
 import { MemeContext } from '../context/MemeContext';
 
-const EditCaption = () => {
+const EditCaption = ({ shareMeme }) => {
   const { handleSubmit, handleChange, inputs } = useContext(MemeContext);
 
   return (
@@ -15,6 +15,9 @@ const EditCaption = () => {
           ))}
           <div className='mt-3'>
             <button className='btn btn-info'>Generate Meme</button>
+            <button className='btn btn-warning' onClick={shareMeme}>
+              Save
+            </button>
           </div>
         </form>
       )}
